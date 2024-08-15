@@ -1,0 +1,25 @@
+Map<String, String> enLang = {
+  //header
+  "invoice_amount": "Invoice Amount",
+  "currency_unit": "Currency Unit",
+  "promotion_groups": "Promotion Groups",
+  "payment_method": "Payment Method",
+  "store": "Store",
+  "store_groups": "Store Groups",
+  "store_region_number": "Store Region Number",
+  "customer_type": "Customer Type",
+  "customer_group": "Customer Group",
+  "customer_degree": "Customer Degree",
+  "customer_activity": "Customer Activity",
+  "customer_classification": "Customer Classification",
+  "customer_number": "Customer Number",
+  "my_customers": "My Customers",
+  "available_data": "Available Data",
+  "selected_data": "Selected Data",
+  "exit": "Exit",
+  "execute": "Execute",
+  "delete_all": "Delete All",
+  "search_in_detailed_data": "Search in detailed data",
+
+  "add_all": "Add All",
+};
