@@ -16,11 +16,11 @@ class DetailedSearchForm extends StatelessWidget {
     final width = context.read<ResponsiveCubit>().isDesktop(context)
         ? Get.width / 3.6
         : context.read<ResponsiveCubit>().isTablet(context)
-            ? Get.width / 3.75
+            ? (Get.width / 3.75)+1
             : Get.width;
 
     final textWidth = context.read<ResponsiveCubit>().isTablet(context)
-        ? Get.width / 3.4
+        ? (Get.width / 3.4)+10
         : 150.0;
 
     final itemWidth = [
@@ -51,7 +51,7 @@ class DetailedSearchForm extends StatelessWidget {
           child: Column(
             children: [
               FlexibleWrapWidgetWithWidth(
-                spacing: 5,
+                spacing: 10,
                 itemWidths: itemWidth,
                 children: [
                   titleText(context, 'from_main_group'.tr),
@@ -145,6 +145,7 @@ class DetailedSearchForm extends StatelessWidget {
                     ratioDesktopOpenSideMenu: 0.3,
                     ratioMobile: 0.4,
                     ratioTablet: 0.28),
+                    spacing: 10,
                 children: [
                   CustomDropDownWithTextForm(
                     hint: 'minimum_amount'.tr,
@@ -185,6 +186,7 @@ class DetailedSearchForm extends StatelessWidget {
                       ratioDesktopOpenSideMenu: 0.3,
                       ratioMobile: 0.4,
                       ratioTablet: 0.4),
+                      
                   children: [
                     Expanded(
                       child: CheckboxListTile(
@@ -245,7 +247,7 @@ class DetailedSearchForm extends StatelessWidget {
       padding: const EdgeInsets.only(top: 10),
       child: Text(
         title,
-        style: AppStyles.styleRegular12(context, color: descriptionColor),
+        style: AppStyles.styleRegular14(context, color: descriptionColor),
       ),
     );
   }
