@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get/get.dart';
+import 'package:reorderlist/core/responsive_cubite/responsive_cubit.dart';
 
 import 'cubite/dragable_cubite.dart';
 import 'cubite/dragable_state.dart';
@@ -11,39 +12,76 @@ class DragDropListViews extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => DragDropCubit(),
-      child: BlocBuilder<DragDropCubit, DragDropState>(
-        builder: (context, state) {
-          final cubit = context.read<DragDropCubit>();
+    isWebAndDesktop(state) {
+      return Row(
+        children: [
+          _buildListPanel(
+            title: 'available_data'.tr,
+            list: state.availableItems,
+            context: context,
+            listColor: Colors.white,
+            isAccept: true,
+            subTitle: 'add_all'.tr,
+          ),
+          const VerticalDivider(
+            color: Color(0xFFE9E9E9),
+            thickness: 2,
+            width: 20,
+          ),
+          _buildListPanel(
+            title: 'selected_data'.tr,
+            list: state.selectedItems,
+            context: context,
+            listColor: Colors.white,
+            isAccept: false,
+            subTitle: 'delete_all'.tr,
+          ),
+        ],
+      );
+    }
 
+    isMobile(state) {
+      return Column(
+        children: [
+          _buildListPanel(
+            title: 'available_data'.tr,
+            list: state.availableItems,
+            context: context,
+            listColor: Colors.white,
+            isAccept: true,
+            subTitle: 'add_all'.tr,
+          ),
+          const SizedBox(
+            height: 10,
+          ),
+          const Divider(
+            color: Color(0xFFE9E9E9),
+            thickness: 2,
+          ),
+          _buildListPanel(
+            title: 'selected_data'.tr,
+            list: state.selectedItems,
+            context: context,
+            listColor: Colors.white,
+            isAccept: false,
+            subTitle: 'delete_all'.tr,
+          ),
+        ],
+      );
+    }
+
+    return BlocBuilder<DragDropCubit, DragDropState>(
+      builder: (context, state) {
+        final cubit = context.read<DragDropCubit>();
+
+        return BlocBuilder<ResponsiveCubit, ResponsiveState>(
+            builder: (context, responsiveState) {
           return Column(
             children: [
               Expanded(
-                child: Row(
-                  children: [
-                    _buildListPanel(
-                      title: 'available_data'.tr,
-                      list: state.availableItems,
-                      context: context,
-                      listColor: Colors.white,
-                      isAccept: true, subTitle: 'add_all'.tr,
-                    ),
-                    const VerticalDivider(
-                      color: Color(0xFFE9E9E9),
-                      thickness: 2,
-                      width: 20,
-                    ),
-                    _buildListPanel(
-                      title: 'selected_data'.tr,
-                      list: state.selectedItems,
-                      context: context,
-                      listColor: Colors.white,
-                      isAccept: false, subTitle: 'delete_all'.tr,
-                    ),
-                  ],
-                ),
-              ),
+                  child: context.read<ResponsiveCubit>().isMobile(context)
+                      ? isMobile(state)
+                      : isWebAndDesktop(state)),
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Row(
@@ -78,8 +116,8 @@ class DragDropListViews extends StatelessWidget {
               ),
             ],
           );
-        },
-      ),
+        });
+      },
     );
   }
 
@@ -146,7 +184,7 @@ class DragDropListViews extends StatelessWidget {
                       cubit.moveAllToAvailable();
                     }
                   },
-                  child:  Text(subTitle,
+                  child: Text(subTitle,
                       style: const TextStyle(color: Color(0xFF0C69C0))),
                 ),
               ],
@@ -206,8 +244,18 @@ class DragDropListViews extends StatelessWidget {
                             child: ListTile(
                               title: Row(
                                 children: [
-                                  Text((index + 1).toString()),
-                                  Text(item.data),
+                                  Container(
+                                    padding: const EdgeInsets.all(8),
+                                    decoration: BoxDecoration(
+                                      color: const Color(0xFFEBF8FF),
+                                      borderRadius: BorderRadius.circular(6.0),
+                                    ),
+                                    child: Text(
+                                      (index + 1).toString(),
+                                    ),
+                                  ),
+                                  const SizedBox(width: 5),
+                                  Expanded(child: Text(item.data)),
                                 ],
                               ),
                               tileColor: Colors.blueAccent.withOpacity(0.5),
@@ -258,7 +306,3 @@ class DragDropListViews extends StatelessWidget {
     );
   }
 }
-
-
-
-

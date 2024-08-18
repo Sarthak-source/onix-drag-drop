@@ -1,5 +1,7 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:reorderlist/core/localization/localization_cubite/localization_cubit.dart';
+import 'package:reorderlist/core/responsive_cubite/responsive_cubit.dart';
+import 'package:reorderlist/core/widgets/dragable/cubite/dragable_cubite.dart';
 
 
 class BlocProviderList {
@@ -7,6 +9,12 @@ class BlocProviderList {
     return [
       BlocProvider<LocalizationCubit>(
         create: (context) => LocalizationCubit()..loadSavedLocale(),
+      ),
+      BlocProvider<ResponsiveCubit>(
+        create: (context) => ResponsiveCubit(),
+      ),
+      BlocProvider<DragDropCubit>(
+        create: (context) => DragDropCubit(),
       ),
     ];
   }
