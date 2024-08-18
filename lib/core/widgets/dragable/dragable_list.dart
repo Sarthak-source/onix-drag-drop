@@ -139,6 +139,7 @@ class DragDropListViews extends StatelessWidget {
             ),
             child: Text(
               (index + 1).toString(),
+              style: const TextStyle(fontSize: 12),
             ),
           ),
           const SizedBox(width: 5),
@@ -184,8 +185,13 @@ class DragDropListViews extends StatelessWidget {
                       cubit.moveAllToAvailable();
                     }
                   },
-                  child: Text(subTitle,
-                      style: const TextStyle(color: Color(0xFF0C69C0))),
+                  child: Text(
+                    subTitle,
+                    style: const TextStyle(
+                      fontSize: 12,
+                      color: Color(0xFF0C69C0),
+                    ),
+                  ),
                 ),
               ],
             ),
@@ -252,6 +258,7 @@ class DragDropListViews extends StatelessWidget {
                                     ),
                                     child: Text(
                                       (index + 1).toString(),
+                                      style: const TextStyle(fontSize: 12),
                                     ),
                                   ),
                                   const SizedBox(width: 5),
@@ -295,7 +302,8 @@ class DragDropListViews extends StatelessWidget {
         icon,
         color: Colors.white,
       ),
-      label: Text(label, style: const TextStyle(color: Colors.white)),
+      label: Text(label,
+          style: const TextStyle(color: Colors.white, fontSize: 11)),
       style: ElevatedButton.styleFrom(
         backgroundColor: color,
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 15),

@@ -26,16 +26,23 @@ class _ButtonScreenState extends State<ButtonScreen> {
               builder: (BuildContext context) {
                 return AlertDialog(
                   backgroundColor: const Color(0xFFF9F9F9),
-                  title:  Column(
+                  title: Column(
                     children: [
                       Row(
                         children: [
-                          Text('search_in_detailed_data'.tr),
+                          Text(
+                            'search_in_detailed_data'.tr,
+                            maxLines: 2,
+                            style: const TextStyle(
+                                fontSize: 20, fontWeight: FontWeight.w700),
+                          ),
                           const Spacer(),
                           const Icon(Icons.cancel)
                         ],
                       ),
-                      const Divider(color: Color(0xFFE9E9E9),),
+                      const Divider(
+                        color: Color(0xFFE9E9E9),
+                      ),
                     ],
                   ),
                   content: SizedBox(
