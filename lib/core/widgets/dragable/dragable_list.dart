@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get/get.dart';
 import 'package:reorderlist/core/responsive_cubite/responsive_cubit.dart';
+import 'package:reorderlist/core/theme/colors.dart';
 
 import 'cubite/dragable_cubite.dart';
 import 'cubite/dragable_state.dart';
@@ -24,7 +25,7 @@ class DragDropListViews extends StatelessWidget {
             subTitle: 'add_all'.tr,
           ),
           const VerticalDivider(
-            color: Color(0xFFE9E9E9),
+            color: dividerColor,
             thickness: 2,
             width: 20,
           ),
@@ -55,7 +56,7 @@ class DragDropListViews extends StatelessWidget {
             height: 10,
           ),
           const Divider(
-            color: Color(0xFFE9E9E9),
+            color: dividerColor,
             thickness: 2,
           ),
           _buildListPanel(
@@ -93,7 +94,7 @@ class DragDropListViews extends StatelessWidget {
                         _buildActionButton(
                           'execute'.tr,
                           Icons.save,
-                          const Color(0xFF0C69C0),
+                          kSkyDarkColor,
                           () {
                             // Handle save action
                           },
@@ -189,7 +190,7 @@ class DragDropListViews extends StatelessWidget {
                     subTitle,
                     style: const TextStyle(
                       fontSize: 12,
-                      color: Color(0xFF0C69C0),
+                      color: kSkyDarkColor,
                     ),
                   ),
                 ),
@@ -279,7 +280,7 @@ class DragDropListViews extends StatelessWidget {
                                     index: index,
                                     child: commonListTile(
                                         item, index, isAccept, context)),
-                            const Divider(height: 1.0),
+                            const Divider(height: 1.0, color: dividerColor),
                           ],
                         ),
                       );

@@ -6,7 +6,7 @@ part 'responsive_state.dart';
 
 class ResponsiveCubit extends Cubit<ResponsiveState> {
   ResponsiveCubit() : super(ResponsiveInitial());
-  bool sideMenuIsOpen = true;
+  bool sideMenuIsOpen = false;
   bool isFullScreen = false;
   double width = 0.0;
 
