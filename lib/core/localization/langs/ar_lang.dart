@@ -45,5 +45,6 @@ Map<String, String> arLang = {
   "maximum_amount": "الحد الأقصى للمبلغ",
   "discount_type": "نوع الخصم",
   "maximum_number_to_get_this_offer": "الحد الأقصى للحصول على هذا العرض",
-  "maximum_quantity_for_offer": "الحد الأقصى للكمية للحصول على العرض"
+  "maximum_quantity_for_offer": "الحد الأقصى للكمية للحصول على العرض",
+  "egypt_bank": "بنك مصر",
 };

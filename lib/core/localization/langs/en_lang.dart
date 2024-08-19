@@ -48,5 +48,6 @@ Map<String, String> enLang = {
   "maximum_amount": "Maximum Amount",
   "discount_type": "Discount Type",
   "maximum_number_to_get_this_offer": "Maximum Number to get this offer",
-  "maximum_quantity_for_offer": "Maximum Quantity for Offer"
+  "maximum_quantity_for_offer": "Maximum Quantity for Offer",
+  "egypt_bank": "Egypt Bank",
 };
