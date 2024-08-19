@@ -64,6 +64,7 @@ class DetailedSearchForm extends StatelessWidget {
                     titleText(context, 'from_main_group'.tr),
                     CustomDropDownWithTextForm(
                       hint: 'to_group_3'.tr,
+                      enableSearch: true,
                       list: [
                         "egypt_bank".tr,
                         "invoice_amount".tr,
@@ -76,6 +77,7 @@ class DetailedSearchForm extends StatelessWidget {
                     ),
                     CustomDropDownWithTextForm(
                       hint: 'from_sub_group'.tr,
+                      enableSearch: true,
                       list: [
                         "egypt_bank".tr,
                         "invoice_amount".tr,
@@ -89,6 +91,7 @@ class DetailedSearchForm extends StatelessWidget {
                     titleText(context, 'to_sub_group'.tr),
                     CustomDropDownWithTextForm(
                       hint: 'from_sub_sub_group'.tr,
+                      enableSearch: true,
                       list: [
                         "egypt_bank".tr,
                         "invoice_amount".tr,
@@ -101,6 +104,7 @@ class DetailedSearchForm extends StatelessWidget {
                     ),
                     CustomDropDownWithTextForm(
                       hint: 'to_sub_sub_group'.tr,
+                      enableSearch: true,
                       list: [
                         "egypt_bank".tr,
                         "invoice_amount".tr,
@@ -117,6 +121,7 @@ class DetailedSearchForm extends StatelessWidget {
                     ),
                     CustomDropDownWithTextForm(
                       hint: 'to_detailed_group'.tr,
+                      enableSearch: true,
                       list: [
                         "egypt_bank".tr,
                         "invoice_amount".tr,
@@ -129,6 +134,7 @@ class DetailedSearchForm extends StatelessWidget {
                     ),
                     CustomDropDownWithTextForm(
                       hint: 'from_item_type'.tr,
+                      enableSearch: true,
                       list: [
                         "egypt_bank".tr,
                         "invoice_amount".tr,
@@ -145,6 +151,7 @@ class DetailedSearchForm extends StatelessWidget {
                     ),
                     CustomDropDownWithTextForm(
                       hint: 'from_item_structure'.tr,
+                      enableSearch: true,
                       list: [
                         "egypt_bank".tr,
                         "invoice_amount".tr,
@@ -157,6 +164,7 @@ class DetailedSearchForm extends StatelessWidget {
                     ),
                     CustomDropDownWithTextForm(
                       hint: 'to_item_structure'.tr,
+                      enableSearch: true,
                       list: [
                         "egypt_bank".tr,
                         "invoice_amount".tr,
@@ -173,6 +181,7 @@ class DetailedSearchForm extends StatelessWidget {
                     ),
                     CustomDropDownWithTextForm(
                       hint: 'to_item_activity'.tr,
+                      enableSearch: true,
                       list: [
                         "egypt_bank".tr,
                         "invoice_amount".tr,
@@ -185,6 +194,7 @@ class DetailedSearchForm extends StatelessWidget {
                     ),
                     CustomDropDownWithTextForm(
                       hint: 'from_item_number'.tr,
+                      enableSearch: true,
                       list: [
                         "egypt_bank".tr,
                         "invoice_amount".tr,
@@ -201,6 +211,7 @@ class DetailedSearchForm extends StatelessWidget {
                     ),
                     CustomDropDownWithTextForm(
                       hint: 'from_warehouse'.tr,
+                      enableSearch: true,
                       list: [
                         "egypt_bank".tr,
                         "invoice_amount".tr,
@@ -213,6 +224,7 @@ class DetailedSearchForm extends StatelessWidget {
                     ),
                     CustomDropDownWithTextForm(
                       hint: 'to_warehouse'.tr,
+                      enableSearch: true,
                       list: [
                         "egypt_bank".tr,
                         "invoice_amount".tr,
@@ -240,6 +252,7 @@ class DetailedSearchForm extends StatelessWidget {
                   children: [
                     CustomDropDownWithTextForm(
                       hint: 'minimum_amount'.tr,
+                      enableSearch: true,
                       list: [
                         "egypt_bank".tr,
                         "invoice_amount".tr,
@@ -252,6 +265,7 @@ class DetailedSearchForm extends StatelessWidget {
                     ),
                     CustomDropDownWithTextForm(
                       hint: 'discount_amount'.tr,
+                      enableSearch: true,
                       list: [
                         "egypt_bank".tr,
                         "invoice_amount".tr,
@@ -264,6 +278,7 @@ class DetailedSearchForm extends StatelessWidget {
                     ),
                     CustomDropDownWithTextForm(
                       hint: 'maximum_amount'.tr,
+                      enableSearch: true,
                       list: [
                         "egypt_bank".tr,
                         "invoice_amount".tr,
@@ -276,6 +291,7 @@ class DetailedSearchForm extends StatelessWidget {
                     ),
                     CustomDropDownWithTextForm(
                       hint: 'discount_type'.tr,
+                      enableSearch: true,
                       list: [
                         "egypt_bank".tr,
                         "invoice_amount".tr,
@@ -288,6 +304,7 @@ class DetailedSearchForm extends StatelessWidget {
                     ),
                     CustomDropDownWithTextForm(
                       hint: 'maximum_number_to_get_this_offer'.tr,
+                      enableSearch: true,
                       list: [
                         "egypt_bank".tr,
                         "invoice_amount".tr,
@@ -302,6 +319,7 @@ class DetailedSearchForm extends StatelessWidget {
                     ),
                     CustomDropDownWithTextForm(
                       hint: 'maximum_quantity_for_offer'.tr,
+                      enableSearch: true,
                       list: [
                         "egypt_bank".tr,
                         "invoice_amount".tr,
