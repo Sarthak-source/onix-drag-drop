@@ -8,6 +8,9 @@ import 'package:reorderlist/core/widgets/custom_drop_down_with_text_form.dart';
 import 'package:reorderlist/core/widgets/flexible_wrap_widget.dart';
 import 'package:reorderlist/core/widgets/flexible_wrap_with_width_widget.dart';
 
+import 'cubite/detailed_search_cubite.dart';
+import 'cubite/detailed_search_state.dart';
+
 class DetailedSearchForm extends StatelessWidget {
   const DetailedSearchForm({super.key});
 
@@ -44,279 +47,349 @@ class DetailedSearchForm extends StatelessWidget {
       width
     ];
 
-    return Padding(
-      padding: const EdgeInsets.all(16.0),
-      child: Form(
-        child: SingleChildScrollView(
-          child: Column(
-            children: [
-              FlexibleWrapWidgetWithWidth(
-                spacing: 10,
-                itemWidths: itemWidth,
-                children: [
-                  titleText(context, 'from_main_group'.tr),
-                  CustomDropDownWithTextForm(
-                    hint: 'to_group_3'.tr,
-                    list: [
-                      "egypt_bank".tr,
-                      "egypt_bank".tr,
-                      "egypt_bank".tr,
-                    ],
-                    onChanged: (value) {},
-                  ),
-                  CustomDropDownWithTextForm(
-                    hint: 'from_sub_group'.tr,
-                    list: [
-                      "egypt_bank".tr,
-                      "egypt_bank".tr,
-                      "egypt_bank".tr,
-                    ],
-                    onChanged: (value) {},
-                  ),
-                  titleText(context, 'to_sub_group'.tr),
-                  CustomDropDownWithTextForm(
-                    hint: 'from_sub_sub_group'.tr,
-                    list: [
-                      "egypt_bank".tr,
-                      "egypt_bank".tr,
-                      "egypt_bank".tr,
-                    ],
-                    onChanged: (value) {},
-                  ),
-                  CustomDropDownWithTextForm(
-                    hint: 'to_sub_sub_group'.tr,
-                    list: [
-                      "egypt_bank".tr,
-                      "egypt_bank".tr,
-                      "egypt_bank".tr,
-                    ],
-                    onChanged: (value) {},
-                  ),
-                  titleText(
-                    context,
-                    'from_detailed_group'.tr,
-                  ),
-                  CustomDropDownWithTextForm(
-                    hint: 'to_detailed_group'.tr,
-                    list: [
-                      "egypt_bank".tr,
-                      "egypt_bank".tr,
-                      "egypt_bank".tr,
-                    ],
-                    onChanged: (value) {},
-                  ),
-                  CustomDropDownWithTextForm(
-                    hint: 'from_item_type'.tr,
-                    list: [
-                      "egypt_bank".tr,
-                      "egypt_bank".tr,
-                      "egypt_bank".tr,
-                    ],
-                    onChanged: (value) {},
-                  ),
-                  titleText(
-                    context,
-                    'to_item_type'.tr,
-                  ),
-                  CustomDropDownWithTextForm(
-                    hint: 'from_item_structure'.tr,
-                    list: [
-                      "egypt_bank".tr,
-                      "egypt_bank".tr,
-                      "egypt_bank".tr,
-                    ],
-                    onChanged: (value) {},
-                  ),
-                  CustomDropDownWithTextForm(
-                    hint: 'to_item_structure'.tr,
-                    list: [
-                      "egypt_bank".tr,
-                      "egypt_bank".tr,
-                      "egypt_bank".tr,
-                    ],
-                    onChanged: (value) {},
-                  ),
-                  titleText(
-                    context,
-                    'from_item_activity'.tr,
-                  ),
-                  CustomDropDownWithTextForm(
-                    hint: 'to_item_activity'.tr,
-                    list: [
-                      "egypt_bank".tr,
-                      "egypt_bank".tr,
-                      "egypt_bank".tr,
-                    ],
-                    onChanged: (value) {},
-                  ),
-                  CustomDropDownWithTextForm(
-                    hint: 'from_item_number'.tr,
-                    list: [
-                      "egypt_bank".tr,
-                      "egypt_bank".tr,
-                      "egypt_bank".tr,
-                    ],
-                    onChanged: (value) {},
-                  ),
-                  titleText(
-                    context,
-                    'to_item_number'.tr,
-                  ),
-                  CustomDropDownWithTextForm(
-                    hint: 'from_warehouse'.tr,
-                    list: [
-                      "egypt_bank".tr,
-                      "egypt_bank".tr,
-                      "egypt_bank".tr,
-                    ],
-                    onChanged: (value) {},
-                  ),
-                  CustomDropDownWithTextForm(
-                    hint: 'to_warehouse'.tr,
-                    list: [
-                      "egypt_bank".tr,
-                      "egypt_bank".tr,
-                      "egypt_bank".tr,
-                    ],
-                    onChanged: (value) {},
-                  ),
-                ],
-              ),
-              const SizedBox(height: 10),
-              const Divider(
-                color: dividerColor,
-              ),
-              const SizedBox(height: 10),
-              FlexibleWrapWidget(
-                itemWidth: context.read<ResponsiveCubit>().getWidth(context,
-                    ratioDesktop: 0.4,
-                    ratioDesktopOpenSideMenu: 0.3,
-                    ratioMobile: 0.4,
-                    ratioTablet: 0.28),
-                spacing: 10,
-                children: [
-                  CustomDropDownWithTextForm(
-                    hint: 'minimum_amount'.tr,
-                    list: [
-                      "egypt_bank".tr,
-                      "egypt_bank".tr,
-                      "egypt_bank".tr,
-                    ],
-                  ),
-                  CustomDropDownWithTextForm(
-                    hint: 'discount_amount'.tr,
-                    list: [
-                      "egypt_bank".tr,
-                      "egypt_bank".tr,
-                      "egypt_bank".tr,
-                    ],
-                  ),
-                  CustomDropDownWithTextForm(
-                    hint: 'maximum_amount'.tr,
-                    list: [
-                      "egypt_bank".tr,
-                      "egypt_bank".tr,
-                      "egypt_bank".tr,
-                    ],
-                  ),
-                  CustomDropDownWithTextForm(
-                    hint: 'discount_type'.tr,
-                    list: [
-                      "egypt_bank".tr,
-                      "egypt_bank".tr,
-                      "egypt_bank".tr,
-                    ],
-                  ),
-                  CustomDropDownWithTextForm(
-                    hint: 'maximum_number_to_get_this_offer'.tr,
-                    list: [
-                      "egypt_bank".tr,
-                      "egypt_bank".tr,
-                      "egypt_bank".tr,
-                    ],
-                  ),
-                  CustomDropDownWithTextForm(
-                    hint: 'maximum_quantity_for_offer'.tr,
-                    list: [
-                      "egypt_bank".tr,
-                      "egypt_bank".tr,
-                      "egypt_bank".tr,
-                    ],
-                  ),
-                ],
-              ),
-              const SizedBox(height: 20),
-              Container(
-                decoration: BoxDecoration(
-                  color: kGrayIX, // Background color
-                  borderRadius: BorderRadius.circular(6), // Border radius
+    return BlocBuilder<DetailedSearchCubit, DetailedSearchState>(
+        builder: (context, state) {
+      final cubit = context.read<DetailedSearchCubit>();
+
+      return Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Form(
+          child: SingleChildScrollView(
+            child: Column(
+              children: [
+                FlexibleWrapWidgetWithWidth(
+                  spacing: 10,
+                  itemWidths: itemWidth,
+                  children: [
+                    titleText(context, 'from_main_group'.tr),
+                    CustomDropDownWithTextForm(
+                      hint: 'to_group_3'.tr,
+                      list: [
+                        "egypt_bank".tr,
+                        "invoice_amount".tr,
+                        "currency_unit".tr,
+                      ],
+                      selectedItem: cubit.getValue('to_group_3'),
+                      onChanged: (value) {
+                        cubit.updateSelectedValue('to_group_3', value);
+                      },
+                    ),
+                    CustomDropDownWithTextForm(
+                      hint: 'from_sub_group'.tr,
+                      list: [
+                        "egypt_bank".tr,
+                        "invoice_amount".tr,
+                        "currency_unit".tr,
+                      ],
+                      selectedItem: cubit.getValue('from_sub_group'),
+                      onChanged: (value) {
+                        cubit.updateSelectedValue('from_sub_group', value);
+                      },
+                    ),
+                    titleText(context, 'to_sub_group'.tr),
+                    CustomDropDownWithTextForm(
+                      hint: 'from_sub_sub_group'.tr,
+                      list: [
+                        "egypt_bank".tr,
+                        "invoice_amount".tr,
+                        "currency_unit".tr,
+                      ],
+                      selectedItem: cubit.getValue('from_sub_sub_group'),
+                      onChanged: (value) {
+                        cubit.updateSelectedValue('from_sub_sub_group', value);
+                      },
+                    ),
+                    CustomDropDownWithTextForm(
+                      hint: 'to_sub_sub_group'.tr,
+                      list: [
+                        "egypt_bank".tr,
+                        "invoice_amount".tr,
+                        "currency_unit".tr,
+                      ],
+                      selectedItem: cubit.getValue('to_sub_sub_group'),
+                      onChanged: (value) {
+                        cubit.updateSelectedValue('to_sub_sub_group', value);
+                      },
+                    ),
+                    titleText(
+                      context,
+                      'from_detailed_group'.tr,
+                    ),
+                    CustomDropDownWithTextForm(
+                      hint: 'to_detailed_group'.tr,
+                      list: [
+                        "egypt_bank".tr,
+                        "invoice_amount".tr,
+                        "currency_unit".tr,
+                      ],
+                      selectedItem: cubit.getValue('to_detailed_group'),
+                      onChanged: (value) {
+                        cubit.updateSelectedValue('to_detailed_group', value);
+                      },
+                    ),
+                    CustomDropDownWithTextForm(
+                      hint: 'from_item_type'.tr,
+                      list: [
+                        "egypt_bank".tr,
+                        "invoice_amount".tr,
+                        "currency_unit".tr,
+                      ],
+                      selectedItem: cubit.getValue('from_item_type'),
+                      onChanged: (value) {
+                        cubit.updateSelectedValue('from_item_type', value);
+                      },
+                    ),
+                    titleText(
+                      context,
+                      'to_item_type'.tr,
+                    ),
+                    CustomDropDownWithTextForm(
+                      hint: 'from_item_structure'.tr,
+                      list: [
+                        "egypt_bank".tr,
+                        "invoice_amount".tr,
+                        "currency_unit".tr,
+                      ],
+                      selectedItem: cubit.getValue('from_item_structure'),
+                      onChanged: (value) {
+                        cubit.updateSelectedValue('from_item_structure', value);
+                      },
+                    ),
+                    CustomDropDownWithTextForm(
+                      hint: 'to_item_structure'.tr,
+                      list: [
+                        "egypt_bank".tr,
+                        "invoice_amount".tr,
+                        "currency_unit".tr,
+                      ],
+                      selectedItem: cubit.getValue('to_item_structure'),
+                      onChanged: (value) {
+                        cubit.updateSelectedValue('to_item_structure', value);
+                      },
+                    ),
+                    titleText(
+                      context,
+                      'from_item_activity'.tr,
+                    ),
+                    CustomDropDownWithTextForm(
+                      hint: 'to_item_activity'.tr,
+                      list: [
+                        "egypt_bank".tr,
+                        "invoice_amount".tr,
+                        "currency_unit".tr,
+                      ],
+                      selectedItem: cubit.getValue('to_item_activity'),
+                      onChanged: (value) {
+                        cubit.updateSelectedValue('to_item_activity', value);
+                      },
+                    ),
+                    CustomDropDownWithTextForm(
+                      hint: 'from_item_number'.tr,
+                      list: [
+                        "egypt_bank".tr,
+                        "invoice_amount".tr,
+                        "currency_unit".tr,
+                      ],
+                      selectedItem: cubit.getValue('from_item_number'),
+                      onChanged: (value) {
+                        cubit.updateSelectedValue('from_item_number', value);
+                      },
+                    ),
+                    titleText(
+                      context,
+                      'to_item_number'.tr,
+                    ),
+                    CustomDropDownWithTextForm(
+                      hint: 'from_warehouse'.tr,
+                      list: [
+                        "egypt_bank".tr,
+                        "invoice_amount".tr,
+                        "currency_unit".tr,
+                      ],
+                      selectedItem: cubit.getValue('from_warehouse'),
+                      onChanged: (value) {
+                        cubit.updateSelectedValue('from_warehouse', value);
+                      },
+                    ),
+                    CustomDropDownWithTextForm(
+                      hint: 'to_warehouse'.tr,
+                      list: [
+                        "egypt_bank".tr,
+                        "invoice_amount".tr,
+                        "currency_unit".tr,
+                      ],
+                      selectedItem: cubit.getValue('to_warehouse'),
+                      onChanged: (value) {
+                        cubit.updateSelectedValue('to_warehouse', value);
+                      },
+                    ),
+                  ],
                 ),
-                // Add child widgets here if needed
-                child: FlexibleWrapWidget(
+                const SizedBox(height: 10),
+                const Divider(
+                  color: dividerColor,
+                ),
+                const SizedBox(height: 10),
+                FlexibleWrapWidget(
                   itemWidth: context.read<ResponsiveCubit>().getWidth(context,
                       ratioDesktop: 0.4,
                       ratioDesktopOpenSideMenu: 0.3,
                       ratioMobile: 0.4,
-                      ratioTablet: 0.4),
+                      ratioTablet: 0.28),
+                  spacing: 10,
                   children: [
-                    CheckboxListTile(
-                      controlAffinity: ListTileControlAffinity.leading,
-                      title: Text('show_items_with_available_quantities'.tr,
-                          style: AppStyles.styleLight12(context)),
-                      value: false,
-                      onChanged: (bool? value) {},
+                    CustomDropDownWithTextForm(
+                      hint: 'minimum_amount'.tr,
+                      list: [
+                        "egypt_bank".tr,
+                        "invoice_amount".tr,
+                        "currency_unit".tr,
+                      ],
+                      selectedItem: cubit.getValue('minimum_amount'),
+                      onChanged: (value) {
+                        cubit.updateSelectedValue('minimum_amount', value);
+                      },
                     ),
-                    CheckboxListTile(
-                      controlAffinity: ListTileControlAffinity.leading,
-                      title: Text(
-                        'show_quota_items'.tr,
-                        style: AppStyles.styleLight12(context),
-                      ),
-                      value: false,
-                      onChanged: (bool? value) {},
+                    CustomDropDownWithTextForm(
+                      hint: 'discount_amount'.tr,
+                      list: [
+                        "egypt_bank".tr,
+                        "invoice_amount".tr,
+                        "currency_unit".tr,
+                      ],
+                      selectedItem: cubit.getValue('discount_amount'),
+                      onChanged: (value) {
+                        cubit.updateSelectedValue('discount_amount', value);
+                      },
+                    ),
+                    CustomDropDownWithTextForm(
+                      hint: 'maximum_amount'.tr,
+                      list: [
+                        "egypt_bank".tr,
+                        "invoice_amount".tr,
+                        "currency_unit".tr,
+                      ],
+                      selectedItem: cubit.getValue('maximum_amount'),
+                      onChanged: (value) {
+                        cubit.updateSelectedValue('maximum_amount', value);
+                      },
+                    ),
+                    CustomDropDownWithTextForm(
+                      hint: 'discount_type'.tr,
+                      list: [
+                        "egypt_bank".tr,
+                        "invoice_amount".tr,
+                        "currency_unit".tr,
+                      ],
+                      selectedItem: cubit.getValue('discount_type'),
+                      onChanged: (value) {
+                        cubit.updateSelectedValue('discount_type', value);
+                      },
+                    ),
+                    CustomDropDownWithTextForm(
+                      hint: 'maximum_number_to_get_this_offer'.tr,
+                      list: [
+                        "egypt_bank".tr,
+                        "invoice_amount".tr,
+                        "currency_unit".tr,
+                      ],
+                      selectedItem:
+                          cubit.getValue('maximum_number_to_get_this_offer'),
+                      onChanged: (value) {
+                        cubit.updateSelectedValue(
+                            'maximum_number_to_get_this_offer', value);
+                      },
+                    ),
+                    CustomDropDownWithTextForm(
+                      hint: 'maximum_quantity_for_offer'.tr,
+                      list: [
+                        "egypt_bank".tr,
+                        "invoice_amount".tr,
+                        "currency_unit".tr,
+                      ],
+                      selectedItem:
+                          cubit.getValue('maximum_quantity_for_offer'),
+                      onChanged: (value) {
+                        cubit.updateSelectedValue(
+                            'maximum_quantity_for_offer', value);
+                      },
                     ),
                   ],
                 ),
-              ),
-              const SizedBox(height: 20),
-              Row(
-                mainAxisAlignment:
-                    (context.read<ResponsiveCubit>().isMobile(context) ||
-                            context.read<ResponsiveCubit>().isTablet(context))
-                        ? MainAxisAlignment.spaceBetween
-                        : MainAxisAlignment.center,
-                children: [
-                  context.read<ResponsiveCubit>().isMobile(context) ||
-                          context.read<ResponsiveCubit>().isTablet(context)
-                      ? const SizedBox.shrink()
-                      : const Spacer(),
-                  _buildActionButton(
-                      'execute'.tr, Icons.save, kSkyDarkColor, () {},
+                const SizedBox(height: 20),
+                Container(
+                  decoration: BoxDecoration(
+                    color: kGrayIX, // Background color
+                    borderRadius: BorderRadius.circular(6), // Border radius
+                  ),
+                  // Add child widgets here if needed
+                  child: FlexibleWrapWidget(
+                    itemWidth: context.read<ResponsiveCubit>().getWidth(context,
+                        ratioDesktop: 0.4,
+                        ratioDesktopOpenSideMenu: 0.3,
+                        ratioMobile: 0.4,
+                        ratioTablet: 0.4),
+                    children: [
+                      CheckboxListTile(
+                        controlAffinity: ListTileControlAffinity.leading,
+                        title: Text('show_items_with_available_quantities'.tr,
+                            style: AppStyles.styleLight12(context)),
+                        value: false,
+                        onChanged: (bool? value) {},
+                      ),
+                      CheckboxListTile(
+                        controlAffinity: ListTileControlAffinity.leading,
+                        title: Text(
+                          'show_quota_items'.tr,
+                          style: AppStyles.styleLight12(context),
+                        ),
+                        value: false,
+                        onChanged: (bool? value) {},
+                      ),
+                    ],
+                  ),
+                ),
+                const SizedBox(height: 20),
+                Row(
+                  mainAxisAlignment:
+                      (context.read<ResponsiveCubit>().isMobile(context) ||
+                              context.read<ResponsiveCubit>().isTablet(context))
+                          ? MainAxisAlignment.spaceBetween
+                          : MainAxisAlignment.center,
+                  children: [
+                    context.read<ResponsiveCubit>().isMobile(context) ||
+                            context.read<ResponsiveCubit>().isTablet(context)
+                        ? const SizedBox.shrink()
+                        : const Spacer(),
+                    _buildActionButton(
+                        'execute'.tr, Icons.save, kSkyDarkColor, () {},
+                        fullWidth: (context
+                                .read<ResponsiveCubit>()
+                                .isMobile(context) ||
+                            context.read<ResponsiveCubit>().isTablet(context))),
+                    const SizedBox(
+                      width: 10,
+                    ),
+                    _buildActionButton(
+                      'delete_all'.tr,
+                      Icons.delete,
                       fullWidth: (context
                               .read<ResponsiveCubit>()
                               .isMobile(context) ||
-                          context.read<ResponsiveCubit>().isTablet(context))),
-                  const SizedBox(
-                    width: 10,
-                  ),
-                  _buildActionButton(
-                    'delete_all'.tr,
-                    Icons.delete,
-                    fullWidth:
-                        (context.read<ResponsiveCubit>().isMobile(context) ||
-                            context.read<ResponsiveCubit>().isTablet(context)),
-                    const Color(0xFF819AA7),
-                    () {
-                      //cubit.clearSelectedItems();
-                    },
-                  ),
-                ],
-              ),
-            ],
+                          context.read<ResponsiveCubit>().isTablet(context)),
+                      const Color(0xFF819AA7),
+                      () {
+                        //cubit.clearSelectedItems();
+                      },
+                    ),
+                  ],
+                ),
+              ],
+            ),
           ),
         ),
-      ),
-    );
+      );
+    });
   }
 
   Padding titleText(BuildContext context, String title) {
