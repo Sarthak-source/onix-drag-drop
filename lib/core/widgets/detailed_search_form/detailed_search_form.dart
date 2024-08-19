@@ -16,11 +16,11 @@ class DetailedSearchForm extends StatelessWidget {
     final width = context.read<ResponsiveCubit>().isDesktop(context)
         ? Get.width / 3.6
         : context.read<ResponsiveCubit>().isTablet(context)
-            ? (Get.width / 3.75)+1
+            ? (Get.width / 3.75) + 1
             : Get.width;
 
     final textWidth = context.read<ResponsiveCubit>().isTablet(context)
-        ? (Get.width / 3.4)+10
+        ? (Get.width / 3.4) + 20
         : 150.0;
 
     final itemWidth = [
@@ -145,7 +145,7 @@ class DetailedSearchForm extends StatelessWidget {
                     ratioDesktopOpenSideMenu: 0.3,
                     ratioMobile: 0.4,
                     ratioTablet: 0.28),
-                    spacing: 10,
+                spacing: 10,
                 children: [
                   CustomDropDownWithTextForm(
                     hint: 'minimum_amount'.tr,
@@ -167,9 +167,9 @@ class DetailedSearchForm extends StatelessWidget {
                     hint: 'maximum_number_to_get_this_offer'.tr,
                     list: const [],
                   ),
-                  const CustomDropDownWithTextForm(
-                    hint: 'Maximum Quantity for Offer',
-                    list: [],
+                  CustomDropDownWithTextForm(
+                    hint: 'maximum_quantity_for_offer'.tr,
+                    list: const [],
                   ),
                 ],
               ),
@@ -186,48 +186,53 @@ class DetailedSearchForm extends StatelessWidget {
                       ratioDesktopOpenSideMenu: 0.3,
                       ratioMobile: 0.4,
                       ratioTablet: 0.4),
-                      
                   children: [
-                    Expanded(
-                      child: CheckboxListTile(
-                        controlAffinity: ListTileControlAffinity.leading,
-                        title: Text('show_items_with_available_quantities'.tr,
-                            style: AppStyles.styleLight12(context)),
-                        value: false,
-                        onChanged: (bool? value) {},
-                      ),
+                    CheckboxListTile(
+                      controlAffinity: ListTileControlAffinity.leading,
+                      title: Text('show_items_with_available_quantities'.tr,
+                          style: AppStyles.styleLight12(context)),
+                      value: false,
+                      onChanged: (bool? value) {},
                     ),
-                    Expanded(
-                      child: CheckboxListTile(
-                        controlAffinity: ListTileControlAffinity.leading,
-                        title: Text(
-                          'show_quota_items'.tr,
-                          style: AppStyles.styleLight12(context),
-                        ),
-                        value: false,
-                        onChanged: (bool? value) {},
+                    CheckboxListTile(
+                      controlAffinity: ListTileControlAffinity.leading,
+                      title: Text(
+                        'show_quota_items'.tr,
+                        style: AppStyles.styleLight12(context),
                       ),
+                      value: false,
+                      onChanged: (bool? value) {},
                     ),
                   ],
                 ),
               ),
               const SizedBox(height: 20),
               Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                mainAxisAlignment:
+                    (context.read<ResponsiveCubit>().isMobile(context) ||
+                            context.read<ResponsiveCubit>().isTablet(context))
+                        ? MainAxisAlignment.spaceBetween
+                        : MainAxisAlignment.center,
                 children: [
-                  const Spacer(),
+                  context.read<ResponsiveCubit>().isMobile(context) ||
+                            context.read<ResponsiveCubit>().isTablet(context)
+                      ? const SizedBox.shrink()
+                      : const Spacer(),
                   _buildActionButton(
-                    'execute'.tr,
-                    Icons.save,
-                    kSkyDarkColor,
-                    () {},
-                  ),
+                      'execute'.tr, Icons.save, kSkyDarkColor, () {},
+                      fullWidth: (context
+                              .read<ResponsiveCubit>()
+                              .isMobile(context) ||
+                          context.read<ResponsiveCubit>().isTablet(context))),
                   const SizedBox(
                     width: 10,
                   ),
                   _buildActionButton(
                     'delete_all'.tr,
                     Icons.delete,
+                    fullWidth:
+                        (context.read<ResponsiveCubit>().isMobile(context) ||
+                            context.read<ResponsiveCubit>().isTablet(context)),
                     const Color(0xFF819AA7),
                     () {
                       //cubit.clearSelectedItems();
@@ -252,16 +257,19 @@ class DetailedSearchForm extends StatelessWidget {
     );
   }
 
-  ElevatedButton _buildActionButton(
-      String label, IconData icon, Color color, VoidCallback onPressed) {
-    return ElevatedButton.icon(
+  Widget _buildActionButton(
+      String label, IconData icon, Color color, VoidCallback onPressed,
+      {bool fullWidth = false}) {
+    final button = ElevatedButton.icon(
       onPressed: onPressed,
       icon: Icon(
         icon,
         color: Colors.white,
       ),
-      label: Text(label,
-          style: const TextStyle(color: Colors.white, fontSize: 11)),
+      label: Text(
+        label,
+        style: const TextStyle(color: Colors.white, fontSize: 11),
+      ),
       style: ElevatedButton.styleFrom(
         backgroundColor: color,
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
@@ -270,5 +278,9 @@ class DetailedSearchForm extends StatelessWidget {
         ),
       ),
     );
+
+    return fullWidth
+        ? Expanded(child: button) // Use Expanded for full width in a Row
+        : button;
   }
 }
