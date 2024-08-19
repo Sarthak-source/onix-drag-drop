@@ -7,6 +7,7 @@ import 'package:reorderlist/core/theme/styles.dart';
 import 'package:reorderlist/core/widgets/custom_drop_down_with_text_form.dart';
 import 'package:reorderlist/core/widgets/flexible_wrap_widget.dart';
 import 'package:reorderlist/core/widgets/flexible_wrap_with_width_widget.dart';
+import 'package:reorderlist/core/widgets/title_check_box.dart';
 
 import 'cubite/detailed_search_cubite.dart';
 import 'cubite/detailed_search_state.dart';
@@ -336,35 +337,32 @@ class DetailedSearchForm extends StatelessWidget {
                 ),
                 const SizedBox(height: 20),
                 Container(
+                  height: 50,
                   decoration: BoxDecoration(
                     color: kGrayIX, // Background color
                     borderRadius: BorderRadius.circular(6), // Border radius
                   ),
                   // Add child widgets here if needed
-                  child: FlexibleWrapWidget(
-                    itemWidth: context.read<ResponsiveCubit>().getWidth(context,
-                        ratioDesktop: 0.4,
-                        ratioDesktopOpenSideMenu: 0.3,
-                        ratioMobile: 0.4,
-                        ratioTablet: 0.4),
-                    children: [
-                      CheckboxListTile(
-                        controlAffinity: ListTileControlAffinity.leading,
-                        title: Text('show_items_with_available_quantities'.tr,
-                            style: AppStyles.styleLight12(context)),
-                        value: false,
-                        onChanged: (bool? value) {},
-                      ),
-                      CheckboxListTile(
-                        controlAffinity: ListTileControlAffinity.leading,
-                        title: Text(
-                          'show_quota_items'.tr,
-                          style: AppStyles.styleLight12(context),
+                  child: Center(
+                    child: FlexibleWrapWidget(
+                      itemWidth: context.read<ResponsiveCubit>().getWidth(context,
+                          ratioDesktop: 0.4,
+                          ratioDesktopOpenSideMenu: 0.3,
+                          ratioMobile: 0.4,
+                          ratioTablet: 0.4),
+                      children: [
+                        TitleCheckBox(
+                          title: 'show_items_with_available_quantities'.tr,
+                          value: false,
+                          onPress: (value) {},
                         ),
-                        value: false,
-                        onChanged: (bool? value) {},
-                      ),
-                    ],
+                        TitleCheckBox(
+                          title: 'show_quota_items'.tr,
+                          value: true,
+                          onPress: (value) {},
+                        ),
+                      ],
+                    ),
                   ),
                 ),
                 const SizedBox(height: 20),
